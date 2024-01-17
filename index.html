@@ -5,90 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vamsi Gabbita - Profile</title>
     <style>
-        /* Your existing styles here */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* Reset some default styles */
+        body, h1, h2, h3, p {
             margin: 0;
             padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f4f4;
             color: #333;
+            line-height: 1.6;
         }
+
         header {
             text-align: center;
             padding: 50px 0;
             background-color: #3498db;
             color: #ffffff;
         }
-       #profile-picture {
-            width: 150px; /* Set the desired width for the profile picture */
-            height: 150px; /* Set the desired height for the profile picture */
+
+        #profile-picture {
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             overflow: hidden;
-            margin: 0 auto; /* Center the container */
+            margin: 20px auto;
             display: flex;
             justify-content: center;
             align-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         #profile-picture img {
             width: 100%;
             height: auto;
             border-radius: 50%;
-        } 
+        }
+
         h1, h2 {
-            color: #001f3f;
+            color: #3498db;
         }
-        p {
-            line-height: 1.6;
-            color: #555;
-        }
+
         nav {
             text-align: center;
             background-color: #3498db;
             padding: 10px;
         }
+
         nav a {
             margin: 0 20px;
             color: #ffffff;
             text-decoration: none;
             font-weight: bold;
+            font-size: 18px;
             transition: color 0.3s ease;
         }
+
         nav a:hover {
             color: #1d68a7;
         }
+
         section {
-            padding: 50px 20px;
+            display: none;
+            padding: 50px;
             max-width: 800px;
             margin: 0 auto;
-        }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            margin: -10px;
-        }
-        .gallery img {
-            width: calc(33.33% - 20px);
-            height: auto;
-            margin: 10px;
-            border: 1px solid #ddd;
+            background-color: #ffffff;
             border-radius: 5px;
-            transition: transform 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
         }
-        .gallery img:hover {
-            transform: scale(1.05);
+
+        section h2 {
+            color: #3498db;
+            margin-bottom: 20px;
         }
+
         ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
         }
+
         ul li {
             margin-bottom: 10px;
         }
-        .resume {
-            text-align: center;
-            margin-top: 50px;
-        }
+
         .resume a {
             display: inline-block;
             padding: 15px 30px;
@@ -96,106 +99,167 @@
             color: #ffffff;
             text-decoration: none;
             border-radius: 5px;
+            font-size: 16px;
             transition: background-color 0.3s ease;
         }
+
         .resume a:hover {
             background-color: #1d68a7;
         }
+
         footer {
             text-align: center;
             padding: 20px;
             background-color: #333;
             color: #ffffff;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            section {
+                padding: 30px;
+            }
+
+            #profile-picture {
+                margin: 20px auto;
+            }
         }
     </style>
 </head>
-<body>
+<body onload="showSection('home')">
     <header>
         <div id="profile-picture">
             <img src="pictures/profile.jpeg" alt="Vamsi Gabbita">
         </div>
         <h1>Vamsi Gabbita</h1>
-        <p>Web Developer | Data Scientist | AI Enthusiast</p>
+        <p>Developer | Cybersecurity Enthusiast | AI Enthusiast</p>
     </header>
 
     <nav>
+        <a href="#" onclick="showSection('home')">Home</a>
         <a href="#" onclick="showSection('about')">About Me</a>
         <a href="#" onclick="showSection('skills')">Skills</a>
         <a href="#" onclick="showSection('projects')">Projects</a>
+        <a href="#" onclick="showSection('experience')">Experience</a>
         <a href="#" onclick="showSection('contact')">Contact</a>
         <a href="#" onclick="showSection('resume')">Resume</a>
     </nav>
 
+    <!-- Home Section -->
+    <section id="home">
+        <h2>Welcome to My Profile</h2>
+        <p>
+            I recently graduated with a Bachelor's of Science in Computer Science at Texas Tech University, where I have gained a solid foundation in programming, data structures, algorithms, software engineering, AI, and deep learning. I am passionate about learning new technologies and applying them to real-world problems. I aspire to become a developer and create innovative and user-friendly web and cloud applications that can make a positive impact on society.
+        </p>
+        <!-- Include other information as needed -->
+    </section>
+
+    <!-- About Me Section -->
     <section id="about">
         <h2>About Me</h2>
         <p>
-            Welcome to my professional profile. I am a dedicated web developer and data scientist with a focus on creating innovative solutions using cutting-edge technologies.
+            I am a highly motivated and detail-oriented individual with a strong technical background. My academic and professional experiences have equipped me with a diverse skill set, including proficiency in programming languages such as Python, C, C++, and Java. I am dedicated to continuous learning and enjoy tackling complex challenges to find innovative solutions.
         </p>
+        <!-- Include other information as needed -->
     </section>
 
+    <!-- Skills Section -->
     <section id="skills">
         <h2>Skills</h2>
         <ul>
             <li>Web Development (HTML, CSS, JavaScript)</li>
             <li>Data Analysis and Visualization</li>
             <li>Machine Learning and Deep Learning</li>
-            <li>Python, Java, C++</li>
+            <li>Python, Java, C, C++</li>
         </ul>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects">
         <h2>Projects</h2>
-    <!-- Project 1 -->
-    <div class="project">
+        <!-- Include project details as needed -->
+        <!-- Project 1 -->
         <div class="project-info">
-            <h3>Secure Healthcare System</h3>
-            <p>Designed a secure healthcare system with 2-factor authentication and threat modeling to protect patient data. Implemented security features using Python.</p>
-            <a href="https://github.com/vamsig08/secure-healthcare-system" target="_blank">GitHub Link</a>
+            <h3>Zombie Survival Game (Python)</h3>
+            <p>A truly exhilarating retro style two player 2D zombie survival game. This immersive gaming experience features dynamically evolving zombie hordes, challenging player coordination, and strategic resource management. </p>
+            <a href="#">GitHub Link</a>
         </div>
-    </div>
-    <br/>
 
-    <!-- Project 2 -->
-    <div class="project">
+        <!-- Project 2 -->
         <div class="project-info">
-            <h3>Neural Machine Translation</h3>
-            <p>Implemented a sequence-to-sequence model for English to Portuguese translation using PyTorch. Trained the model with custom datasets and conducted multiple epochs for optimization.</p>
-            <a href="https://github.com/vamsig08/neural-machine-translation" target="_blank">GitHub Link</a>
+            <h3>Self-Driving Car (Python)</h3>
+            <p>Developed a Deep Q network reinforcement learning algorithm to train model. Utilized Python, PyTorch to build the neural network with tensors and integrated Kivy framework to facilitate the development of interactive GUIs.</p>
+            <a href="#">GitHub Link</a>
         </div>
-    </div>
-    <br/>
 
-    <!-- Project 3 -->
-    <div class="project">
+        <!-- Project 3 -->
         <div class="project-info">
-            <h3>Personal Portfolio Website</h3>
-            <p>Developed a professional portfolio website using HTML, CSS, and JavaScript. Integrated interactive features and included a responsive design for optimal viewing on various devices.</p>
-            <a href="https://github.com/vamsig08/portfolio-website" target="_blank">GitHub Link</a>
+            <h3>Slot Machine (Python)</h3>
+            <p>Engineered a Python-based slot machine application, leveraging principles of algorithmic randomness, object-oriented programming, and game development.</p>
+            <a href="#">GitHub Link</a>
         </div>
-    </div>
-    <br/>
 
-    <!-- Project 4 -->
-    <div class="project">
+        <!-- Project 4 -->
         <div class="project-info">
-            <h3>Data Visualization Dashboard</h3>
-            <p>Created an interactive data visualization dashboard using D3.js and Chart.js. Integrated with live data sources to provide real-time insights for decision-makers.</p>
-            <a href="https://github.com/vamsig08/data-visualization-dashboard" target="_blank">GitHub Link</a>
+            <h3>Language Translation Model (Python)</h3>
+            <p>Engineered a PyTorch-based sequence-to-sequence translation model for English to Portuguese, optimizing architecture and hyperparameters. Executed data preparation, including test dataset curation and multiple training epochs, showcasing proficiency in deep learning and model optimization.</p>
+            <a href="#">GitHub Link</a>
         </div>
-    </div>
-    <br/>
 
-    <!-- Project 5 -->
-    <div class="project">
+        <!-- Project 5 -->
         <div class="project-info">
-            <h3>E-commerce Platform</h3>
-            <p>Developed a full-stack e-commerce platform using MERN stack. Implemented features such as user authentication, product catalog, and secure payment processing.</p>
-            <a href="https://github.com/vamsig08/e-commerce-platform" target="_blank">GitHub Link</a>
+            <h3>Modified Cellular Life Simulator (Python)</h3>
+            <p>Built a multi-processing application without any special libraries to simulate Nth mutation for complex cellular matrices with emphasis on run time in a specific compute env.</p>
+            <a href="#">GitHub Link</a>
         </div>
-    </div>
-    <br/>
+
+        <!-- Project 6 -->
+        <div class="project-info">
+            <h3>Movie Booking System (Java, MySQL)</h3>
+            <p>As a team, partly developed and extensively documented purpose, scope, product overview, functionality, operating environment, and design details.</p>
+            <a href="#">GitHub Link</a>
+        </div>
+
+        <!-- Project 7 -->
+        <div class="project-info">
+            <h3>Secure Healthcare System (Python)</h3>
+            <p>Engineered and implemented a secure healthcare system in Python, incorporating advanced security measures such as 2-factor authentication, threat modeling, and UML driven design. Applied object-oriented programming principles to fortify critical use cases, ensuring elevated levels of data and security.</p>
+            <a href="#">GitHub Link</a>
+        </div>
     </section>
 
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2>Experience</h2>
+        <!-- Include experience details as needed -->
+        <!-- Experience 1 -->
+        <div class="experience-info">
+            <h3>Cloud Application Analyst Intern, OpenText</h3>
+            <p>Aug 2021 – Dec 2021</p>
+            <ul>
+                <li>Analyzed cloud applications, identified user functionalities, and classified the associated URLs.</li>
+                <li>Tested the mapping of URLs to user function on web browser or web proxy.</li>
+                <li>Documented steps to trigger cloud application functionalities for automation.</li>
+                <li>Analyzed URLs and IP addresses and took informed decisions on security risks found.</li>
+                <li>Supported classification projects for Threat Intelligence Partners, targeting various markets across the globe.</li>
+            </ul>
+        </div>
+
+        <!-- Experience 2 -->
+        <div class="experience-info">
+            <h3>Assistant, Texas Tech University - Library Services</h3>
+            <p>Nov 2020 – Dec 2023</p>
+            <ul>
+                <li>Assisted students and faculty at the circulation/ service desks.</li>
+                <li>Helped students and faculty use print and online resources as well as library equipment/ technology.</li>
+                <li>Maintained library organization by sorting, shelving, and shifting books within library stacks.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
     <section id="contact">
         <h2>Contact</h2>
         <ul>
@@ -205,9 +269,10 @@
         </ul>
     </section>
 
+    <!-- Resume Section -->
     <section id="resume" class="resume">
         <h2>Resume</h2>
-        <p>Explore my professional experience. <a href="resume/Resume_2023-12-29.pdf">View Resume</a></p>
+        <p><a href="resume/Resume_2023-12-29.pdf">View Resume</a></p>
     </section>
 
     <footer>
@@ -224,4 +289,3 @@
     </script>
 </body>
 </html>
-
