@@ -108,12 +108,13 @@
         }
 
         footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
             text-align: center;
             padding: 20px;
             background-color: #333;
             color: #ffffff;
-            margin-top: 20px;
-            border-radius: 5px;
         }
 
         /* Responsive styles */
@@ -126,9 +127,90 @@
                 margin: 20px auto;
             }
         }
+
+        @keyframes jumpAnimation {
+            0% { transform: translateY(-100px); opacity: 0; }
+            50% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(100px); opacity: 0; }
+        }
     </style>
+    
+    <!--<script>
+        function spawnYoungChimps() {
+            // Number of chimps to spawn
+            const numChimps = 100; // Adjust as needed
+
+            // Image source
+            const imagePath = 'pictures/YoungChimp.png'; // Replace with the actual path
+
+            // Function to create a chimp element
+            function createChimp() {
+                const chimp = document.createElement('img');
+                chimp.src = imagePath;
+                chimp.alt = 'Young Chimps';
+                chimp.style.position = 'absolute';
+
+                // Set random position within the viewport
+                const chimpWidth = chimp.width;
+                const chimpHeight = chimp.height;
+
+                const maxX = document.body.offsetWidth - chimpWidth;
+                const maxY = document.body.offsetHeight - chimpHeight;
+
+                chimp.style.left = Math.random() * maxX + 'px';
+                chimp.style.top = Math.random() * maxY + 'px';
+
+                // Apply the jumpAnimation with fade out effect
+                chimp.style.animation = 'jumpAnimation 3s ease-in-out, fadeOut 3s ease-in-out';
+
+                // Append the chimp to the document body
+                document.body.appendChild(chimp);
+                // Remove the chimp after 3 seconds
+                setTimeout(() => {
+                    document.body.removeChild(chimp);
+                }, 3000);
+            }
+
+            // Spawn the specified number of chimps
+            for (let i = 0; i < numChimps; i++) {
+                createChimp();
+            }
+        }
+        function isOverlapping(x, y, chimp) {
+            // Check if the new chimp's position overlaps with any existing chimp
+            const chimps = document.querySelectorAll('img');
+            for (const existingChimp of chimps) {
+                const rect1 = chimp.getBoundingClientRect();
+                const rect2 = existingChimp.getBoundingClientRect();
+                if (
+                    !(rect1.right < rect2.left || 
+                    rect1.left > rect2.right || 
+                    rect1.bottom < rect2.top || 
+                    rect1.top > rect2.bottom)
+                    ) {
+                        return true; // Overlapping
+                    }
+                }
+             return false; // Not overlapping
+        }
+    </script>
+    <style>
+        @keyframes jumpAnimation {
+            0% { transform: translateY(0); opacity: 1; }
+            25% { transform: translateY(-50px); }
+            50% { transform: translateY(0); }
+            75% { transform: translateY(-30px); }
+            100% { transform: translateY(0); opacity: 0; }
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>-->
+
 </head>
-<body onload="showSection('home')">
+<body onload="showSection('home'); spawnYoungChimps()">
     <header>
         <div id="profile-picture">
             <img src="pictures/profile.jpeg" alt="Vamsi Gabbita">
@@ -184,49 +266,55 @@
         <div class="project-info">
             <h3>Zombie Survival Game (Python)</h3>
             <p>A truly exhilarating retro style two player 2D zombie survival game. This immersive gaming experience features dynamically evolving zombie hordes, challenging player coordination, and strategic resource management. </p>
-            <a href="#">GitHub Link</a>
+            <a href="https://github.com/vamsig08/Zombie-Survival-Game">GitHub Link</a>
         </div>
+        <br>
 
         <!-- Project 2 -->
         <div class="project-info">
             <h3>Self-Driving Car (Python)</h3>
             <p>Developed a Deep Q network reinforcement learning algorithm to train model. Utilized Python, PyTorch to build the neural network with tensors and integrated Kivy framework to facilitate the development of interactive GUIs.</p>
-            <a href="#">GitHub Link</a>
+            <a href="https://github.com/vamsig08/Self-Driving-Car">GitHub Link</a>
         </div>
+        <br>
 
         <!-- Project 3 -->
         <div class="project-info">
             <h3>Slot Machine (Python)</h3>
             <p>Engineered a Python-based slot machine application, leveraging principles of algorithmic randomness, object-oriented programming, and game development.</p>
-            <a href="#">GitHub Link</a>
+            <a href="https://github.com/vamsig08/SlotMachine">GitHub Link</a>
         </div>
+        <br>
 
         <!-- Project 4 -->
         <div class="project-info">
             <h3>Language Translation Model (Python)</h3>
             <p>Engineered a PyTorch-based sequence-to-sequence translation model for English to Portuguese, optimizing architecture and hyperparameters. Executed data preparation, including test dataset curation and multiple training epochs, showcasing proficiency in deep learning and model optimization.</p>
-            <a href="#">GitHub Link</a>
+            <a href="https://github.com/vamsig08/Language-Translation-Model">GitHub Link</a>
         </div>
+        <br>
 
         <!-- Project 5 -->
         <div class="project-info">
             <h3>Modified Cellular Life Simulator (Python)</h3>
             <p>Built a multi-processing application without any special libraries to simulate Nth mutation for complex cellular matrices with emphasis on run time in a specific compute env.</p>
-            <a href="#">GitHub Link</a>
+            <a href="https://github.com/vamsig08/cellular-life-simulator">GitHub Link</a>
         </div>
+        <br>
 
         <!-- Project 6 -->
         <div class="project-info">
             <h3>Movie Booking System (Java, MySQL)</h3>
             <p>As a team, partly developed and extensively documented purpose, scope, product overview, functionality, operating environment, and design details.</p>
-            <a href="#">GitHub Link</a>
+            <a href="https://github.com/vamsig08/movie-booking-system">GitHub Link</a>
         </div>
+        <br>
 
         <!-- Project 7 -->
         <div class="project-info">
             <h3>Secure Healthcare System (Python)</h3>
             <p>Engineered and implemented a secure healthcare system in Python, incorporating advanced security measures such as 2-factor authentication, threat modeling, and UML driven design. Applied object-oriented programming principles to fortify critical use cases, ensuring elevated levels of data and security.</p>
-            <a href="#">GitHub Link</a>
+            <a href="https://github.com/vamsig08/Secure-Healthcare-System">GitHub Link</a>
         </div>
     </section>
 
@@ -238,23 +326,30 @@
         <div class="experience-info">
             <h3>Cloud Application Analyst Intern, OpenText</h3>
             <p>Aug 2021 – Dec 2021</p>
+            <br>
             <ul>
-                <li>Analyzed cloud applications, identified user functionalities, and classified the associated URLs.</li>
-                <li>Tested the mapping of URLs to user function on web browser or web proxy.</li>
-                <li>Documented steps to trigger cloud application functionalities for automation.</li>
-                <li>Analyzed URLs and IP addresses and took informed decisions on security risks found.</li>
-                <li>Supported classification projects for Threat Intelligence Partners, targeting various markets across the globe.</li>
+                <li>
+                    During my internship, I delved into the intricacies of web scraping and web crawling, employing SQL as the primary language for data collection and analysis. My responsibilities included analyzing cloud applications, identifying user functionalities, and classifying URLs, with a focus on ensuring secure and efficient web application functionality. Leveraging my expertise in SQL, I meticulously collected and stored data in the MySQL database, contributing to the classification of websites and supporting projects for Threat Intelligence Partners globally. Through code reviews and testing, I actively participated in securing web applications such as Microsoft SharePoint, Remind, Amazon Chime, Facebook Workplace, GitHub, MegaShare, and Dropbox. My role extended to crafting rules against potential security threats, ensuring the robustness of web applications and collaborating with diverse teams to fortify cybersecurity measures.
+
+                </li>
+
+                <li>
+                    I also aquired a deep understanding of web protocols, data protection and security. I navigated the complexities of packet switching, IP, and TCP protocols, ensuring the consistency and reliability of data transmission. As I honed my skills in command prompt usage for networking tasks and code management, I actively engaged in team-based projects, emphasizing the importance of communication in achieving project success.
+
+                </li>
             </ul>
         </div>
+        <br>
+
 
         <!-- Experience 2 -->
         <div class="experience-info">
             <h3>Assistant, Texas Tech University - Library Services</h3>
             <p>Nov 2020 – Dec 2023</p>
+            <br>
             <ul>
-                <li>Assisted students and faculty at the circulation/ service desks.</li>
-                <li>Helped students and faculty use print and online resources as well as library equipment/ technology.</li>
-                <li>Maintained library organization by sorting, shelving, and shifting books within library stacks.</li>
+                <li>In my capacity at the circulation and service desks, I provided invaluable assistance to both students and faculty, offering guidance on utilizing print and online resources, as well as navigating library equipment and technology. My commitment extended to maintaining meticulous library organization through tasks such as sorting, shelving, and strategically shifting books within the library stacks. This role allowed me to cultivate a professional environment that facilitated seamless access to resources and enhanced the overall efficiency of library operations.
+                </li>
             </ul>
         </div>
     </section>
@@ -264,8 +359,8 @@
         <h2>Contact</h2>
         <ul>
             <li>Email: vamsi.gabbita@gmail.com</li>
-            <li>LinkedIn: <a href="#">linkedin.com/in/vgabbita</a></li>
-            <li>GitHub: <a href="#">github.com/vamsig08</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/vgabbita/">linkedin.com/in/vgabbita</a></li>
+            <li>GitHub: <a href="https://github.com/vamsig08">github.com/vamsig08</a></li>
         </ul>
     </section>
 
